@@ -9,16 +9,15 @@ right: 39
 */
 
 
-
 $(document).keydown(function(rs){
 
-	ajaxcall(rs);
+	keysend(rs);
 });
 
 
 
 
-function ajaxcall(rs) {
+function keysend(rs) {
 
 	var ajaxdata = new Object();
 	ajaxdata.key = rs.which;

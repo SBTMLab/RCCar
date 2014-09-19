@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 from RCCar import app
-from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash, jsonify
+from flask import Flask, request, url_for, abort, render_template
 
 
 
