@@ -5,4 +5,4 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 
 @app.route('/')
 def index():
-    return "Hello World!"
+    return render_template('main.html')
