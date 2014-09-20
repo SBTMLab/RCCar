@@ -10,28 +10,26 @@ def index():
 
 
 
-@app.route('/control')
+@app.route('/control', methods=['POST'])
 def control():
-	key = request.args.get('key',0, type=int)
+	key = request.get_json()
+	print key
 
-	if key == 38 :
+	if '38' in key :
 		#UP
 		print "up"
 
-	elif key == 40 :
+	if '40' in key :
 		#DOWN
 		print "down"
 
-	elif key == 37 :
+	if '37' in key :
 		#LEFT
 		print "left"
 
-	elif key == 39 :
+	if '39' in key:
 		#RIGHT
 		print "right"
-	else :
-		#ELSE
-		print "else"
 
 
 	return "Sucess"

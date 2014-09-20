@@ -9,24 +9,36 @@ right: 39
 */
 
 
-$(document).keydown(function(rs){
+var keys = {};
 
-	keysend(rs);
+$(document).keydown(function (e) {
+    keys[e.which] = true;
+});
+
+$(document).keyup(function (e) {
+    delete keys[e.which];
 });
 
 
 
 
-function keysend(rs) {
+timer = setInterval(function () {
+	keysend();
+}, 100);
+
+
+function keysend() {
 
 	var ajaxdata = new Object();
-	ajaxdata.key = rs.which;
+	ajaxdata.key = keys;
+	console.log(keys);
 
 
 	$.ajax({      
-        type:"GET",  
+        type:"POST",  
+        contentType: "application/json; charset=utf-8",
         url:'/control',      
-        data: ajaxdata,      
+        data: JSON.stringify(keys),      
         success:function(args){   
             console.log("Success");   
         }  
