@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*-
 from RCCar import app
 from flask import Flask, request, url_for, abort, render_template
+from RCCar.Control import Control
 
 
 
@@ -15,21 +16,34 @@ def control():
 	key = request.get_json()
 	print key
 
+
 	if '38' in key :
 		#UP
-		print "up"
+		Control.speedup(10)
 
 	if '40' in key :
 		#DOWN
-		print "down"
+		Control.speeddown(10)
 
-	if '37' in key :
+
+	if '37' in key and '39' in key:
+		pass
+
+	elif '37' in key :
 		#LEFT
-		print "left"
+		Control.lefter()
+		
 
-	if '39' in key:
+	elif '39' in key:
 		#RIGHT
-		print "right"
+		Control.righter()
+
+	else :
+		Control.center()
+
+	print Control.Direction
+
+
 
 
 	return "Sucess"
