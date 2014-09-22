@@ -16,7 +16,6 @@ def control():
 	key = request.get_json()
 	print key
 
-
 	if '38' in key :
 		#UP
 		Control.speedup(10)
@@ -31,12 +30,12 @@ def control():
 
 	elif '37' in key :
 		#LEFT
-		Control.lefter()
+		Control.righter()
 		
 
 	elif '39' in key:
 		#RIGHT
-		Control.righter()
+		Control.lefter()
 
 	else :
 		Control.center()

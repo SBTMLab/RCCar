@@ -1,4 +1,6 @@
+from RPIO import PWM
 
+servo = PWM.Servo()
 
 class Control :
 	Direction = 0
@@ -7,15 +9,23 @@ class Control :
 
 	@staticmethod
 	def lefter ():
-		Control.Direction+=10
+		if Control.Direction <1400 :
+			Control.Direction+=200
+			Control.setdirection()
 
 	@staticmethod
 	def righter ():
-		Control.Direction-=10
+		if Control.Direction >-1400 :
+			Control.Direction-=200
+			Control.setdirection()
 
 	@staticmethod
 	def center():
-		Control.Direction/=2
+		if Control.Direction > 0:
+			Control.Direction -= 200
+		elif Control.Direction < 0 :
+			Control.Direction +=200
+		Control.setdirection()
 
 	@staticmethod
 	def speedup(val):
@@ -24,3 +34,7 @@ class Control :
 	@staticmethod
 	def speeddown(val):
 		Control.Speed -= val
+
+	@staticmethod
+	def setdirection():
+		servo.set_servo(8,1400 + Control.Direction)

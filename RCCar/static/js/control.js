@@ -24,14 +24,13 @@ $(document).keyup(function (e) {
 
 timer = setInterval(function () {
 	keysend();
-}, 100);
+}, 300);
 
 
 function keysend() {
 
 	var ajaxdata = new Object();
 	ajaxdata.key = keys;
-	console.log(keys);
 
 
 	$.ajax({      
@@ -40,7 +39,6 @@ function keysend() {
         url:'/control',      
         data: JSON.stringify(keys),      
         success:function(args){   
-            console.log("Success");   
         }  
     });  
 
