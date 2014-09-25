@@ -21,10 +21,7 @@ class Control :
 
 	@staticmethod
 	def center():
-		if Control.Direction > 0:
-			Control.Direction -= 200
-		elif Control.Direction < 0 :
-			Control.Direction +=200
+		Control.Direction = 0
 		Control.setdirection()
 
 	@staticmethod

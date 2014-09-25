@@ -13,28 +13,25 @@ var keys = {};
 
 $(document).keydown(function (e) {
     keys[e.which] = true;
+    ajaxkeysend();
+
 });
 
 $(document).keyup(function (e) {
     delete keys[e.which];
+    ajaxkeysend();
 });
 
 
 
-
-timer = setInterval(function () {
-	keysend();
-}, 300);
-
-
-function keysend() {
+function ajaxkeysend() {
 
 	var ajaxdata = new Object();
 	ajaxdata.key = keys;
 
-
 	$.ajax({      
         type:"POST",  
+        dataType : 'json',
         contentType: "application/json; charset=utf-8",
         url:'/control',      
         data: JSON.stringify(keys),      

@@ -5,16 +5,23 @@ from RCCar.Control import Control
 
 
 
+
+
+
 @app.route('/')
 def index():
     return render_template('main.html')
 
 
 
+
+
 @app.route('/control', methods=['POST'])
 def control():
 	key = request.get_json()
+	print "hello"
 	print key
+	
 
 	if '38' in key :
 		#UP
@@ -44,8 +51,10 @@ def control():
 
 
 
-
+	
 	return "Sucess"
+
+
 
 
 
