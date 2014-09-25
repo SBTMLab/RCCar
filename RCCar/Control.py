@@ -10,13 +10,13 @@ class Control :
 	@staticmethod
 	def lefter ():
 		if Control.Direction <1400 :
-			Control.Direction+=200
+			Control.Direction= 700#+=200
 			Control.setdirection()
 
 	@staticmethod
 	def righter ():
 		if Control.Direction >-1400 :
-			Control.Direction-=200
+			Control.Direction= -700#-=200
 			Control.setdirection()
 
 	@staticmethod

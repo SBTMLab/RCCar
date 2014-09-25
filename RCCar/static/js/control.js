@@ -11,16 +11,19 @@ right: 39
 
 var keys = {};
 
-$(document).keydown(function (e) {
-    keys[e.which] = true;
-    ajaxkeysend();
 
-});
+
+document.onkeydown = function (e) {
+    keys[e.which] = true;
+   ajaxkeysend();
+
+};
 
 $(document).keyup(function (e) {
     delete keys[e.which];
     ajaxkeysend();
 });
+
 
 
 
