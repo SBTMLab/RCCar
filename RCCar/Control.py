@@ -1,3 +1,4 @@
+#-*- coding:utf-8 -*-
 from RPIO import PWM
 
 servo = PWM.Servo()
