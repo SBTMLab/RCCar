@@ -14,7 +14,9 @@ def index():
 
 
 
-
+@app.route('/stream')
+def stream():
+	return "nothing"
 
 @app.route('/control', methods=['POST'])
 def control():
