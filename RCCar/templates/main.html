@@ -7,9 +7,20 @@
 
 <body>
 
-안녕 세계여!
 
-<img src="{{ url_for('static', filename='stream/pic.jpg')}}" />
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="99%">
+  <param name="movie" value="vgaplayer.swf" />
+  <param name="FlashVars" value="url=rtmp://sbtm.iptime.org/rtmp/stream" />
+  <embed src="vgaplayer.swf" 
+	 width="100%" height="99%" 
+	 allowScriptAccess="sameDomain"
+	 allowFullScreen="true"
+	 type="application/x-shockwave-flash"
+	 FlashVars="url=rtmp://sbtm.iptime.org/rtmp/stream&amp;fullscreen=1"
+	 pluginspage="http://www.adobe.com/go/getflashplayer" />
+</object>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='js/control.js')}}"></script>
 

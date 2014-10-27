@@ -1,7 +1,8 @@
 # Sublime Text Project
-*.sublime-project
 *.sublime-workspace
 **/*.json
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
