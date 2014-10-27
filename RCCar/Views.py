@@ -15,17 +15,11 @@ def index():
 
 
 
-@app.route('/stream')
-def stream():
-	return "nothing"
-
 @app.route('/control', methods=['POST'])
 def control():
 	key = request.get_json()
-	print "hello"
 	print key
 	
-
 	if '38' in key :
 		#UP
 		Control.speedup(10)
