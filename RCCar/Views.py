@@ -1,6 +1,7 @@
 #-*- coding:utf-8 -*-
 from RCCar import app
 from flask import Flask, request, url_for, abort, render_template
+from values import rtmpstring
 from RCCar.Control import Control
 
 
@@ -10,7 +11,7 @@ from RCCar.Control import Control
 
 @app.route('/')
 def index():
-    return render_template('main.html')
+    return render_template('main.html',rtmpstring=rtmpstring)
 
 
 

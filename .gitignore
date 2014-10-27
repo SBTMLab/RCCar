@@ -2,7 +2,7 @@
 *.sublime-workspace
 **/*.json
 
-
+values.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
