@@ -52,6 +52,6 @@ class Control :
 	def setspeed():
 		RPIO.output(dcen, False)
 		RPIO.output(dcdr, False)
-		PWM.add_channel_pulse(0, 17, 0, Control.Speed)
+		PWM.add_channel_pulse(0, 10, 100, 50)
 
 
