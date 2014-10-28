@@ -7,7 +7,8 @@ dcen = 27
 RPIO.setup(22, RPIO.OUT)
 dcdr = 22
 
-dc = PWM.Servo()
+PWM.setup()
+PWM.init_channel(10)
 
 
 class Control :
@@ -51,6 +52,6 @@ class Control :
 	def setspeed():
 		RPIO.output(dcen, False)
 		RPIO.output(dcdr, False)
-		servo.set_servo(10, 2000)
+		PWM.add_channel_pulse(0, 17, 0, Control.Speed)
 
 
