@@ -35,4 +35,4 @@ class Control :
 
 	@staticmethod
 	def setdirection():
-		servo.set_servo(8,1400 + Control.Direction)
+		servo.set_servo(9,1400 + Control.Direction)
