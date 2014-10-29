@@ -8,7 +8,7 @@ RPIO.setup(22, RPIO.OUT)
 dcdr = 22
 
 PWM.setup()
-PWM.init_channel(10)
+PWM.init_channel(3)
 
 
 class Control :
@@ -44,14 +44,29 @@ class Control :
 		Control.setspeed()
 
 	@staticmethod
+	def speedzero():
+		Control.Speed =0
+		Control.setspeed()
+
+	@staticmethod
 	def setdirection():
 		servo.set_servo(8,1400 + Control.Direction)
 
 
 	@staticmethod
 	def setspeed():
-		RPIO.output(dcen, False)
-		RPIO.output(dcdr, False)
-		PWM.add_channel_pulse(0, 10, 100, 50)
+
+		if (Control.Speed == 0) :
+			RPIO.output(dcen, True)
+		else :
+			RPIO.output(dcen, False)
+
+		if (Control.Speed < 0 ) :
+			RPIO.output(dcdr, True)
+		else:
+			RPIO.output(dcdr, True)
+		
+
+		PWM.add_channel_pulse(3, 10, 0, Control.Speed)
 
 
