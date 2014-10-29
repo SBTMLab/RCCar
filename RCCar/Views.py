@@ -20,13 +20,26 @@ def control():
 	key = request.get_json()
 	print key
 	
-	if '38' in key :
-		#UP
-		Control.speedup(10)
 
-	if '40' in key :
+
+
+
+
+	if '37' in key and '39' in key:
+		pass
+
+	elif '38' in key :
+		#UP
+		Control.speedup(50)
+
+	elif '40' in key :
 		#DOWN
-		Control.speeddown(10)
+		Control.speeddown(50)
+	else :
+		Control.speedzero()
+
+
+
 
 
 	if '37' in key and '39' in key:
