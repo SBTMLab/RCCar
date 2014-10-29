@@ -19,7 +19,7 @@ def control():
 	key = request.get_json()
 	print key
 
-	if '37' in key and '39' in key:
+	if '38' in key and '40' in key:
 		pass
 
 	elif '38' in key :
@@ -31,6 +31,8 @@ def control():
 		Control.speeddown(50)
 	else :
 		Control.speedzero()
+
+
 
 	if '37' in key and '39' in key:
 		pass

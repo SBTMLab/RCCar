@@ -48,7 +48,7 @@ class Control :
 
 	@staticmethod
 	def speedzero():
-		Control.Speed =0
+		Control.Speed = 0
 		Control.setspeed()
 
 	@staticmethod
@@ -67,7 +67,7 @@ class Control :
 		if (Control.Speed < 0 ) :
 			RPIO.output(dcdr, True)
 		else:
-			RPIO.output(dcdr, True)
+			RPIO.output(dcdr, False)
 		
 
 		PWM.add_channel_pulse(3, 10, 0, Control.Speed)
