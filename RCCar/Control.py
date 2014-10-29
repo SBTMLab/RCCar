@@ -2,6 +2,7 @@
 import RPIO
 from RPIO import PWM
 
+RPIO.cleanup()
 
 servo = PWM.Servo()
 RPIO.setup(27, RPIO.OUT)
