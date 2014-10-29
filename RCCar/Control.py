@@ -58,11 +58,8 @@ class Control :
 
 	@staticmethod
 	def setspeed():
-
+		RPIO.output(dcen, False)
 		if (Control.Speed == 0) :
-			RPIO.output(dcen, True)
-		else :
-			RPIO.output(dcen, False)
 
 		if (Control.Speed < 0 ) :
 			RPIO.output(dcdr, True)
