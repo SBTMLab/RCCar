@@ -14,16 +14,10 @@ def index():
     return render_template('main.html',rtmpstring=rtmpstring)
 
 
-
 @app.route('/control', methods=['POST'])
 def control():
 	key = request.get_json()
 	print key
-	
-
-
-
-
 
 	if '37' in key and '39' in key:
 		pass
@@ -37,10 +31,6 @@ def control():
 		Control.speeddown(50)
 	else :
 		Control.speedzero()
-
-
-
-
 
 	if '37' in key and '39' in key:
 		pass

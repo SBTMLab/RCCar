@@ -1,5 +1,7 @@
 #-*- coding:utf-8 -*-
+import RPIO
 from RPIO import PWM
+
 
 servo = PWM.Servo()
 RPIO.setup(27, RPIO.OUT)
