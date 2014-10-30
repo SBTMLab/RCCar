@@ -1,2 +1,2 @@
 #-*- coding:utf-8 -*-
-rtmpstring = "rtmp://sbtm.iptime.org/rtmp/stream"
+rtmpstring = "rtmp://192.168.0.49/rtmp/stream"

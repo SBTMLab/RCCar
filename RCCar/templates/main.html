@@ -12,7 +12,7 @@
   <param name="movie" value="vgaplayer.swf" />
   <param name="FlashVars" value="url={{rtmpstring}}" />
   <embed src="{{ url_for('static', filename='flash/vgaplayer.swf')}}" 
-	 width="100%" height="99%" 
+	 height="600" width="900"
 	 allowScriptAccess="sameDomain"
 	 allowFullScreen="true"
 	 type="application/x-shockwave-flash"
@@ -21,7 +21,7 @@
 </object>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/control.js')}}"></script>
 
 </body>

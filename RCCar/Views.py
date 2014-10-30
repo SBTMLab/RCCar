@@ -24,11 +24,11 @@ def control():
 
 	elif '38' in key :
 		#UP
-		Control.speedup(50)
+		Control.speedup(250)
 
 	elif '40' in key :
 		#DOWN
-		Control.speeddown(50)
+		Control.speeddown(250)
 	else :
 		Control.speedzero()
 
@@ -39,12 +39,12 @@ def control():
 
 	elif '37' in key :
 		#LEFT
-		Control.righter()
+		Control.lefter()
 		
 
 	elif '39' in key:
 		#RIGHT
-		Control.lefter()
+		Control.righter()
 
 	else :
 		Control.center()
@@ -56,15 +56,3 @@ def control():
 	
 	return "Sucess"
 
-
-
-
-
-
-
-""" 주요 키코드
-up: 38
-down: 40
-left: 37
-right: 39
-"""
